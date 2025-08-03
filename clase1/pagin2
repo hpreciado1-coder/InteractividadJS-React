@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="escript.js">
+    <link rel="stylesheet" href="style.css">
+    
+<head>
+</head>
+<body>
+    <style>
+     #imagen {
+    height: 400px;
+    background-color: #e2ebe3;
+    text-align: center;
+    line-height: 400px;
+    font-size: 30px;
+    background-image: url('');
+    background-size: cover;       /* o "contain" si no quieres recorte */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    padding: 0%;
+    margin: 12px;
+    cursor: pointer;
+
+    }
+
+    img.preview {
+      height: 60px;
+      margin: 5px  15px;
+      cursor: pointer;
+
+
+    }
+    
+
+    </style>
+
+<div id="imagen">Pase el ratón por encima de una imagen para mostrarla aquí</div>
+
+<img class="preview" src="https://images.alphacoders.com/598/thumbbig-598847.webp" alt="Primera imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images6.alphacoders.com/605/thumbbig-605598.webp" alt="Segunda imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images7.alphacoders.com/134/thumbbig-1341150.webp" alt="Tercera imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images3.alphacoders.com/614/thumbbig-614743.webp" alt="cuarta imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images.alphacoders.com/605/thumbbig-605592.webp" alt="quinta imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images3.alphacoders.com/132/thumbbig-1328396.webp" alt="sexta imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images5.alphacoders.com/413/thumbbig-413842.webp" alt="septima imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images4.alphacoders.com/598/thumbbig-598785.webp" alt="octaba imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images3.alphacoders.com/602/thumbbig-602092.webp" alt="novena imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<img class="preview" src="https://images8.alphacoders.com/621/thumbbig-621482.webp" alt="decima imagen" onmouseover="upDate(this)" onmouseout="deshacer()">
+
+<script>
+
+    // definir la funcion upDate e imprimir console.log.......
+function upDate(previewPic) {
+    console.log("evento disparado: onmouseover");
+
+// mostrar la informacion de la img......................
+console.log("Fuente (src): " + previewPic.src);
+console.log("texto alternativo (alt): "+ previewPic.alt);
+
+ const imagenDiv = document.getElementById("imagen");
+    imagenDiv.innerHTML = previewPic.alt;
+    imagenDiv.style.backgroundImage = "url('" + previewPic.src + "')";
+}
+
+function deshacer() {
+    const imagenDiv = document.getElementById("imagen");
+
+    // Restaurar fondo y texto original
+    imagenDiv.style.backgroundImage = "url('')";
+    imagenDiv.innerHTML = "Pase el ratón por encima de una imagen para mostrarla aquí";
+}   
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
